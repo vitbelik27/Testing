@@ -7,7 +7,7 @@ import unittest
 
 class TestLogMailRu(unittest.TestCase):
 
-    """
+
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome('D:\Pycharm\chromedriver.exe')
@@ -24,12 +24,12 @@ class TestLogMailRu(unittest.TestCase):
         self.driver.maximize_window()
         self.login = 'first.student@mail.ru'
         self.pasw = 'qwerty1A'
-
+    """
     def test_1_log_in(self):
         driver = self.driver
         login = self.login
 
-        driver.find_element_by_xpath('//input[@id="mailbox__login"]').send_keys(login)
+        driver.find_element_by_xpath('//input[@id="mailbox__login"]').clean().send_keys(login)
         button = driver.find_element_by_id('mailbox__auth__button')
         button.click()
 
@@ -45,7 +45,7 @@ class TestLogMailRu(unittest.TestCase):
         driver = self.driver
         login = self.login
 
-        driver.find_element_by_xpath('//input[@id="mailbox__login"]').send_keys(login)
+        driver.find_element_by_xpath('//input[@id="mailbox__login"]').clean().send_keys(login)
         #check the alert msg with incorrect password
         driver.find_element_by_id('mailbox__password').send_keys('qwerty')
         button = driver.find_element_by_id('mailbox__auth__button')
@@ -74,7 +74,7 @@ class TestLogMailRu(unittest.TestCase):
         mail = driver.find_element_by_xpath("//span/i[@id='PH_user-email']").text
         self.assertEqual(mail, login)
 
-    """
+
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
@@ -85,6 +85,7 @@ class TestLogMailRu(unittest.TestCase):
     """
     def tearDown(self):
         self.driver.quit()
-
+    
 if __name__ == '__main__':
     unittest.main()
+    """
