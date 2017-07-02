@@ -29,7 +29,7 @@ class TestLogMailRu(unittest.TestCase):
         driver = self.driver
         login = self.login
 
-        driver.find_element_by_xpath('//input[@id="mailbox__login"]').clean().send_keys(login)
+        driver.find_element_by_xpath('//input[@id="mailbox__login"]').send_keys(login)
         button = driver.find_element_by_id('mailbox__auth__button')
         button.click()
 
@@ -45,7 +45,7 @@ class TestLogMailRu(unittest.TestCase):
         driver = self.driver
         login = self.login
 
-        driver.find_element_by_xpath('//input[@id="mailbox__login"]').clean().send_keys(login)
+        driver.find_element_by_xpath('//input[@id="mailbox__login"]').send_keys(login)
         #check the alert msg with incorrect password
         driver.find_element_by_id('mailbox__password').send_keys('qwerty')
         button = driver.find_element_by_id('mailbox__auth__button')
