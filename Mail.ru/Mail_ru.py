@@ -3,7 +3,7 @@ from selenium import webdriver
 
 class OpenMailRuPage(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome('D:\Pycharm\chromedriver.exe')
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
 
